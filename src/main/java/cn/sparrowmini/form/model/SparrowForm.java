@@ -1,6 +1,7 @@
 package cn.sparrowmini.form.model;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import javax.persistence.*;
 
@@ -29,6 +30,22 @@ public class SparrowForm extends BaseOpLog implements Serializable{
 	private String code;
 	@Column(columnDefinition = "TEXT")
 	private String form;
+
+	/**
+	 * 查看数据列表的自定义视图
+	 */
+	private String viewUrl;
+
+	/**
+	 * 表单分类
+	 */
+	private String catalog;
+
+	/**
+	 * 需要展现的字段
+	 */
+	@ElementCollection
+	private Set<String> displayColumns;
 
 	private FormOpenTypeEnum openType = FormOpenTypeEnum.PAGE;
 
@@ -75,5 +92,29 @@ public class SparrowForm extends BaseOpLog implements Serializable{
 
 	public void setOpenType(FormOpenTypeEnum openType) {
 		this.openType = openType;
+	}
+
+	public String getViewUrl() {
+		return viewUrl;
+	}
+
+	public void setViewUrl(String viewUrl) {
+		this.viewUrl = viewUrl;
+	}
+
+	public String getCatalog() {
+		return catalog;
+	}
+
+	public void setCatalog(String catalog) {
+		this.catalog = catalog;
+	}
+
+	public Set<String> getDisplayColumns() {
+		return displayColumns;
+	}
+
+	public void setDisplayColumns(Set<String> displayColumns) {
+		this.displayColumns = displayColumns;
 	}
 }
