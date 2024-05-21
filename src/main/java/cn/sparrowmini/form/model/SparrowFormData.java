@@ -24,10 +24,11 @@ public class SparrowFormData extends BaseOpLog implements Serializable{
 	@GenericGenerator(name = "id-generator", strategy = "uuid")
 	@GeneratedValue(generator = "id-generator")
 	private String id;
-	
+
+	@Column(name = "form_id")
 	private String formId;
 	
-	@JoinColumn(name = "formId",insertable = false, updatable = false)
+	@JoinColumn(name = "form_id",insertable = false, updatable = false)
 	@JsonProperty(access = JsonProperty.Access.READ_ONLY)
 	@ManyToOne
 	@LazyCollection(LazyCollectionOption.FALSE)
