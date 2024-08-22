@@ -61,6 +61,7 @@ public class SparrowFormServiceImpl implements SparrowFormService {
 		updateForm.setName(form.getName());
 		updateForm.setCode(form.getCode());
 		updateForm.setForm(form.getForm());
+		updateForm.setDisplayColumns(form.getDisplayColumns());
 		this.formRepository.save(updateForm);
 	}
 
