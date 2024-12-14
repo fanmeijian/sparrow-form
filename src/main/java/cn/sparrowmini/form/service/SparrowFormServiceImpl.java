@@ -47,7 +47,15 @@ public class SparrowFormServiceImpl implements SparrowFormService {
 
 	@Override
 	public Page<SparrowFormData> getFormDatas(String formId, Pageable pageable) {
-		return this.formDataRepository.findByFormId(formId, pageable);
+		if(this.formRepository.existsById(formId)) {
+			return this.formDataRepository.findByFormId(formId, pageable);
+		}else{
+			SparrowForm formRef = this.formRepository.getReferenceByCode(formId);
+			if(formRef != null) {
+				return this.formDataRepository.findByFormId(formRef.getId(), pageable);
+			}
+			return null;
+		}
 	}
 
 	@Override
