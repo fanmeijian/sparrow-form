@@ -9,11 +9,13 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.hibernate.envers.Audited;
+import org.hibernate.envers.NotAudited;
 
 /**
  * 表单数据
  */
-
+@Audited
 @Entity
 @Table(name = "spr_form_data")
 public class SparrowFormData extends BaseOpLog implements Serializable{
@@ -27,7 +29,8 @@ public class SparrowFormData extends BaseOpLog implements Serializable{
 
 	@Column(name = "form_id")
 	private String formId;
-	
+
+	@NotAudited
 	@JoinColumn(name = "form_id",insertable = false, updatable = false)
 	@JsonProperty(access = JsonProperty.Access.READ_ONLY)
 	@ManyToOne

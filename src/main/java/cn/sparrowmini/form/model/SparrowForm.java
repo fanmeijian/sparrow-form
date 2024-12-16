@@ -9,12 +9,14 @@ import cn.sparrowmini.common.BaseOpLog;
 import org.hibernate.annotations.GenericGenerator;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.hibernate.envers.Audited;
 
 
 /**
  * 表单设计
  */
 
+@Audited
 @Entity
 @Table(name = "spr_form")
 public class SparrowForm extends BaseForm implements Serializable{

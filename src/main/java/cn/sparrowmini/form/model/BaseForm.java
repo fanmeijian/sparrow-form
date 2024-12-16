@@ -1,12 +1,14 @@
 package cn.sparrowmini.form.model;
 
 import cn.sparrowmini.common.BaseOpLog;
+import org.hibernate.envers.Audited;
 
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.MappedSuperclass;
 import java.util.Set;
 
+@Audited
 @MappedSuperclass
 public abstract class BaseForm extends BaseOpLog {
 
