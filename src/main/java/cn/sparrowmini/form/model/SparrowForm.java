@@ -5,7 +5,6 @@ import java.util.Set;
 
 import javax.persistence.*;
 
-import cn.sparrowmini.common.BaseOpLog;
 import org.hibernate.annotations.GenericGenerator;
 
 import com.fasterxml.jackson.annotation.JsonProperty;

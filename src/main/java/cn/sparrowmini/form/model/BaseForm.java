@@ -1,6 +1,6 @@
 package cn.sparrowmini.form.model;
 
-import cn.sparrowmini.common.BaseOpLog;
+import cn.sparrowmini.common.model.BaseOpLog;
 import org.hibernate.envers.Audited;
 
 import javax.persistence.Column;
